@@ -1,0 +1,164 @@
+{
+	"id": "26dde7b3-6224-4c0f-8655-6f5223978228",
+	"values": [
+		{
+			"key": "csrftoken",
+			"value": "7Of59zGTSaPf03W1wnnN2hgz5Qz14P4rC1WXYW002avsyb9zj7Q8wx0FxGUqVkgP",
+			"enabled": true
+		},
+		{
+			"key": "email",
+			"value": "\"hossamdebyen@ea06l.com\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "\"hossamdn99\"",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "\"Abouryad12\"",
+			"enabled": true
+		},
+		{
+			"key": "confirmPassword",
+			"value": "\"Abouryad12\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "firstName",
+			"value": "\"Hossam\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "lastName",
+			"value": "\"Debyen\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "country",
+			"value": "\"Lebanon\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "city",
+			"value": "\"Beirut\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "title",
+			"value": "\"HABNAL\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "genre",
+			"value": "\"Action\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "price",
+			"value": "100",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "author",
+			"value": "\"William1\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "total",
+			"value": "200",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "userId",
+			"value": "\"666486a09bf0da613d11f929\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "userIdParam",
+			"value": "666486a09bf0da613d11f929",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "userIdParams",
+			"value": "666486a09bf0da613d11f929",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "accessToken",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiaG9zc2FtZG45OSIsImVtYWlsIjoiaG9zc2FtZGVieWVuQGVhMDZsLmNvbSIsImlkIjoiNjY2NDg2YTA5YmYwZGE2MTNkMTFmOTI5In0sImlhdCI6MTcxODEyNzA4MSwiZXhwIjoxNzE4MTMwNjgxfQ.ynPDU4hjZfF-0wrszyaf09HZb8AVvkgbCENvDaUesHw",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "bookId",
+			"value": "\"66648a8de3d692bc5e2a77f6\"",
+			"enabled": true
+		},
+		{
+			"key": "bookIdParam",
+			"value": "66648a8de3d692bc5e2a77f6",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "bookIds",
+			"value": "[\"66648a8de3d692bc5e2a77f6\"]",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "shippingAddress",
+			"value": "\"Lebanon, Beirut\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "orderId",
+			"value": "6667352b00c2a028d59adcfc",
+			"enabled": true
+		},
+		{
+			"key": "status",
+			"value": "\"ACCEPTED\"",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "bookVersionId",
+			"value": "\"66648a8de3d692bc5e2a77f6\"",
+			"enabled": true
+		},
+		{
+			"key": "version",
+			"value": "0.4",
+			"enabled": true
+		},
+		{
+			"key": "bookVersionParam",
+			"value": "66656ac8b08b34a5541e5ccd",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2024-06-11T20:22:27.409Z",
+	"_postman_exported_using": "Postman/11.1.25"
+}

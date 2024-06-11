@@ -1,0 +1,615 @@
+{
+	"info": {
+		"_postman_id": "8f7652c9-7ab5-47ab-9724-cdfc4fe1770e",
+		"name": "ModularCx",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18581090",
+		"_collection_link": "https://gold-trinity-7633.postman.co/workspace/New-Team-Workspace~35601ab0-f3a0-4489-96bc-56c7a2383573/collection/18581090-8f7652c9-7ab5-47ab-9724-cdfc4fe1770e?action=share&source=collection_link&creator=18581090"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //you can sign in using email or username\r\n    // \"email\":{{email}},\r\n    \"username\": {{username}},\r\n    \"password\": {{password}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "sigunUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": {{email}},\r\n    \"username\": {{username}},\r\n    \"password\": {{password}},\r\n    \"confirmPassword\": {{confirmPassword}},\r\n    \"firstName\": {{firstName}},\r\n    \"lastName\": {{lastName}},\r\n    \"country\": {{country}},\r\n    \"city\": {{city}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/auth/signup"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "getBooksByUserId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": "http://localhost:8000/books/byUser{{userIdParam}}"
+					},
+					"response": []
+				},
+				{
+					"name": "addBook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":{{userId}},\r\n    \"title\": {{title}},\r\n    \"author\": {{author}},\r\n    \"genre\": {{genre}},\r\n    \"price\": {{price}} \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/books"
+					},
+					"response": []
+				},
+				{
+					"name": "getBookById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": "http://localhost:8000/books/book/{{bookIdParam}}"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBooks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": "http://localhost:8000/books"
+					},
+					"response": []
+				},
+				{
+					"name": "getBooksByCriteria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //add any term used in creating book it will return data \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/books/find-by-criteria"
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    //  \"userId\":{{userId}},\r\n    \"title\": {{title}},\r\n    \"author\": {{author}},\r\n    \"genre\": {{genre}},\r\n    \"price\": {{price}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/books/{{bookIdParam}}"
+					},
+					"response": []
+				},
+				{
+					"name": "softDeleteBook",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/books/delete?id={{bookIdParam}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"books",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{bookIdParam}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBook",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": "http://localhost:8000/books/{{bookIdParam}}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "addCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":{{userId}},\r\n    \"total\":{{total}},\r\n    \"bookIds\":{{bookIds}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/cart/"
+					},
+					"response": []
+				},
+				{
+					"name": "getCartByUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/cart/byUser?userId={{userIdParams}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"cart",
+								"byUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{userIdParams}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCarts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": "http://localhost:8000/cart/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateCartByUserId",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookIds\":{{bookIds}},\r\n    \"total\":{{total}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/cart/update?userId={{userIdParams}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"cart",
+								"update"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{userIdParams}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "getOrdersBuUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/order/byUser?userId={{userIdParams}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"byUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "{{userIdParams}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": "http://localhost:8000/order/"
+					},
+					"response": []
+				},
+				{
+					"name": "addOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":{{userId}},\r\n    \"bookIds\":{{bookIds}},\r\n    \"total\":{{total}},\r\n    \"shippingAddress\":{{shippingAddress}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/order/"
+					},
+					"response": []
+				},
+				{
+					"name": "changeOrderStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //status is ENUM PENDING-ACCEPTED-DECLINED\r\n    \"status\":{{status}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/order/updateStatus/{{orderId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrder",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //add any term of the order in order to update\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/order/update/{{orderId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "getOrdersByCriteria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //add any term of the order in order to update\r\n    \"_id\": \"6667367096fd9f88601b6d7c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/order/find-by-criteria"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bookVersions",
+			"item": [
+				{
+					"name": "getBookVersionByBook",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/bookVersions/byBook?bookId={{bookIdParam}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"bookVersions",
+								"byBook"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "{{bookIdParam}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookVersions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": "http://localhost:8000/bookVersions"
+					},
+					"response": []
+				},
+				{
+					"name": "getBookVersionsById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": "http://localhost:8000/bookVersions/book/{{bookVersionParam}}"
+					},
+					"response": []
+				},
+				{
+					"name": "getBookVersionsByCriteria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\":{{bookId}}\r\n    // \"userId\":{{userId}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/bookVersions/find-by-criteria"
+					},
+					"response": []
+				},
+				{
+					"name": "getBookVersionsByVersion",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/bookVersions/byVersion?version={{version}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"bookVersions",
+								"byVersion"
+							],
+							"query": [
+								{
+									"key": "version",
+									"value": "{{version}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
